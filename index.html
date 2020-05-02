@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+		<!-- Bootstrap CSS -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+
+		<title>World of Dinosaurs</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row sec_nav align-items-center">
+				<div class="col"><h4>World of Dinosaurs</h4></div>
+				<div class="col-auto"><img src="assets/model.png" /></div>
+				<div class="col-auto"><img src="assets/annotation.png" /></div>
+				<div class="col-auto"><img src="assets/orientation.png" /></div>
+				<div class="col-auto"><img src="assets/scale.png" /></div>
+			</div>
+			<div class="row sec_dash">
+				<div class="col-3 p-0 sec_sidebar">
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
+							<span class="text-uppercase d-inline-block mt-2">Cras justo odio</span>
+							<div class="btn-group float-right" role="group" aria-label="Basic example">
+								<button type="button" class="btn btn-outline-secondary">Less</button>
+								<button type="button" class="btn btn-outline-secondary">Open</button>
+							</div>
+							<p class="text-muted mt-3 text-justify">
+								Life finds a way. You really think you can fly that thing? Yeah, but John, if The Pirates of the Caribbean breaks
+								down, the pirates don’t eat the tourists. Hey, take a look at the earthlings. Goodbye! Hey, you know how I'm, like,
+								always trying to save the planet? Here's my chance. You really think you can fly that thing? Hey, take a look at the
+								earthlings. Goodbye! They're using our own satellites against us. And the clock is ticking. I gave it a cold? I gave
+								it a virus. A computer virus. Yeah, but your scientists were so preoccupied with whether or not they could, they
+								didn't stop to think if they should.
+							</p>
+						</li>
+						<li class="list-group-item">
+							<span class="text-uppercase d-inline-block mt-2">Cras justo odio</span>
+							<div class="btn-group float-right" role="group" aria-label="Basic example">
+								<button type="button" class="btn btn-outline-secondary">More</button>
+								<button type="button" class="btn btn-outline-secondary">Open</button>
+							</div>
+							<p class="text-muted mt-3 text-justify d-none"></p>
+						</li>
+						<li class="list-group-item">
+							<span class="text-uppercase d-inline-block mt-2">Cras justo odio</span>
+							<div class="btn-group float-right" role="group" aria-label="Basic example">
+								<button type="button" class="btn btn-outline-secondary">More</button>
+								<button type="button" class="btn btn-outline-secondary">Open</button>
+							</div>
+							<p class="text-muted mt-3 text-justify d-none"></p>
+						</li>
+						<li class="list-group-item">
+							<span class="text-uppercase d-inline-block mt-2">Cras justo odio</span>
+							<div class="btn-group float-right" role="group" aria-label="Basic example">
+								<button type="button" class="btn btn-outline-secondary">More</button>
+								<button type="button" class="btn btn-outline-secondary">Open</button>
+							</div>
+							<p class="text-muted mt-3 text-justify d-none"></p>
+						</li>
+						<li class="list-group-item">
+							<span class="text-uppercase d-inline-block mt-2">Cras justo odio</span>
+							<div class="btn-group float-right" role="group" aria-label="Basic example">
+								<button type="button" class="btn btn-outline-secondary">More</button>
+								<button type="button" class="btn btn-outline-secondary">Open</button>
+							</div>
+							<p class="text-muted mt-3 text-justify d-none"></p>
+						</li>
+					</ul>
+					<button id="btn_prev" type="button" class="btn btn-outline-secondary m-3 float-left">Prev</button>
+					<button id="btn_next" type="button" class="btn btn-outline-secondary m-3 float-right">Next</button>
+				</div>
+				<div class="col">
+					<div class="tool_nav">
+						<div class="btn_nav_left rounded-circle bg-primary text-center text-white"><i class="fas fa-chevron-left"></i></div>
+						<div class="btn_nav_up rounded-circle bg-primary text-center text-white"><i class="fas fa-chevron-up"></i></div>
+						<div class="btn_nav_down rounded-circle bg-primary text-center text-white"><i class="fas fa-chevron-down"></i></div>
+						<div class="btn_nav_right rounded-circle bg-primary text-center text-white"><i class="fas fa-chevron-right"></i></div>
+						<div class="btn_nav_in rounded-circle bg-primary text-center text-white"><i class="fas fa-search-plus"></i></div>
+						<div class="btn_nav_out rounded-circle bg-primary text-center text-white"><i class="fas fa-search-minus"></i></div>
+					</div>
+					<div class="tool_agent">
+						<div class="rounded-pill bg-white p-3 m-3">Hello World!</div>
+						<div class="rounded-circle bg-primary text-center text-white float-right">
+							<i class="fas fa-robot"></i>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 p-0 sec_sidebar">
+					<div class="input-group p-3">
+						<input class="form-control" id="observation" type="text" placeholder="Make a reply" />
+						<div class="input-group-append">
+							<button class="btn btn-outline-secondary" type="button" id="button-addon2">Add</button>
+						</div>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item text-justify bg-light">
+							<span class="rounded-circle bg-primary text-white mr-2 d-inline-block float-left"><i class="fas fa-search"></i></span>
+							<span class="text-uppercase d-inline-block mt-2">Observation</span>
+							<div class="btn-group float-right" role="group" aria-label="Basic example">
+								<button type="button" class="btn btn-outline-secondary">Like</button>
+								<button type="button" class="btn btn-outline-secondary">Less</button>
+							</div>
+							<p class="text-muted mt-3 text-justify">
+								Life finds a way. God help us, we're in the hands of engineers. I was part of something special. Hey, you know how
+								I'm, like, always trying to save the planet? Here's my chance. Eventually, you do plan to have dinosaurs on your
+								dinosaur tour, right? I was part of something special.
+							</p>
+							<p class="text-muted ml-4 text-justify">
+								Life finds a way. God help us, we're in the hands of engineers. I was part of something special. Hey, you know how
+								I'm, like, always trying to save the planet? Here's my chance. Eventually, you do plan to have dinosaurs on your
+								dinosaur tour, right? I was part of something special.
+							</p>
+						</li>
+						<li class="list-group-item text-justify">
+							<span class="rounded-circle bg-primary text-white mr-2 d-inline-block float-left"><i class="fas fa-search"></i></span>
+							<span class="text-uppercase d-inline-block mt-2">Observation</span>
+							<div class="btn-group float-right" role="group" aria-label="Basic example">
+								<button type="button" class="btn btn-outline-secondary">Like</button>
+								<button type="button" class="btn btn-outline-secondary">More</button>
+							</div>
+							<p class="text-muted mt-3 text-justify">
+								Life finds a way. God help us, we're in the hands of engineers. I was part of something special. Hey, you know how
+								I'm, like, always trying to save the planet? Here's my chance. Eventually, you do plan to have dinosaurs on your
+								dinosaur tour, right? I was part of something special.
+							</p>
+						</li>
+						<li class="list-group-item text-justify">
+							<span class="rounded-circle bg-primary text-white mr-2 d-inline-block float-left"><i class="fas fa-search"></i></span>
+							<span class="text-uppercase d-inline-block mt-2">Observation</span>
+							<div class="btn-group float-right" role="group" aria-label="Basic example">
+								<button type="button" class="btn btn-outline-secondary">Like</button>
+								<button type="button" class="btn btn-outline-secondary">More</button>
+							</div>
+							<p class="text-muted mt-3 text-justify">
+								Life finds a way. God help us, we're in the hands of engineers. I was part of something special. Hey, you know how
+								I'm, like, always trying to save the planet? Here's my chance. Eventually, you do plan to have dinosaurs on your
+								dinosaur tour, right? I was part of something special.
+							</p>
+						</li>
+						<li class="list-group-item text-justify">
+							<span class="rounded-circle bg-primary text-white mr-2 d-inline-block float-left"><i class="fas fa-search"></i></span>
+							<span class="text-uppercase d-inline-block mt-2">Observation</span>
+							<div class="btn-group float-right" role="group" aria-label="Basic example">
+								<button type="button" class="btn btn-outline-secondary">Like</button>
+								<button type="button" class="btn btn-outline-secondary">More</button>
+							</div>
+							<p class="text-muted mt-3 text-justify">
+								Life finds a way. God help us, we're in the hands of engineers. I was part of something special. Hey, you know how
+								I'm, like, always trying to save the planet? Here's my chance. Eventually, you do plan to have dinosaurs on your
+								dinosaur tour, right? I was part of something special.
+							</p>
+						</li>
+					</ul>
+					<button id="btn_prev2" type="button" class="btn btn-outline-secondary m-3 float-left">Prev</button>
+					<button id="btn_next2" type="button" class="btn btn-outline-secondary m-3 float-right">Next</button>
+				</div>
+			</div>
+		</div>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
