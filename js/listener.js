@@ -64,3 +64,91 @@ array_like_rightbar.forEach((item) => {
 		likeComment(event.target.id);
 	});
 });
+btn_nav_left.addEventListener("mousedown", function () {
+	console.log("mouse down");
+	btn_nav_left.style.boxShadow = "0px 0px 2px 7px #007bff80";
+	camera.position.x /= 0.9;
+});
+btn_nav_left.addEventListener("mouseup", function () {
+	console.log("mouse up");
+	btn_nav_left.style.boxShadow = "none";
+	var zoom = controls.target.distanceTo(controls.object.position);
+	var x = camera.position.x;
+	var y = camera.position.y;
+	var z = camera.position.z;
+	console.log(zoom, x, y, z);
+});
+btn_nav_up.addEventListener("mousedown", function () {
+	console.log("mouse down");
+	btn_nav_up.style.boxShadow = "0px 0px 2px 7px #007bff80";
+	camera.position.y *= 0.9;
+});
+btn_nav_up.addEventListener("mouseup", function () {
+	console.log("mouse up");
+	btn_nav_up.style.boxShadow = "none";
+	var zoom = controls.target.distanceTo(controls.object.position);
+	var x = camera.position.x;
+	var y = camera.position.y;
+	var z = camera.position.z;
+	console.log(zoom, x, y, z);
+});
+btn_nav_right.addEventListener("mousedown", function () {
+	console.log("mouse down");
+	btn_nav_right.style.boxShadow = "0px 0px 2px 7px #007bff80";
+	camera.position.x *= 0.9;
+});
+btn_nav_right.addEventListener("mouseup", function () {
+	console.log("mouse up");
+	btn_nav_right.style.boxShadow = "none";
+	var zoom = controls.target.distanceTo(controls.object.position);
+	var x = camera.position.x;
+	var y = camera.position.y;
+	var z = camera.position.z;
+	console.log(zoom, x, y, z);
+});
+btn_nav_down.addEventListener("mousedown", function () {
+	console.log("mouse down");
+	btn_nav_down.style.boxShadow = "0px 0px 2px 7px #007bff80";
+	camera.position.y /= 0.9;
+});
+btn_nav_down.addEventListener("mouseup", function () {
+	console.log("mouse up");
+	btn_nav_down.style.boxShadow = "none";
+	var zoom = controls.target.distanceTo(controls.object.position);
+	var x = camera.position.x;
+	var y = camera.position.y;
+	var z = camera.position.z;
+	console.log(zoom, x, y, z);
+});
+btn_nav_in.addEventListener("mousedown", function () {
+	console.log("mouse down");
+	btn_nav_in.style.boxShadow = "0px 0px 2px 7px #007bff80";
+	camera.position.x *= 0.9;
+	camera.position.y *= 0.9;
+	camera.position.z *= 0.9;
+});
+btn_nav_in.addEventListener("mouseup", function () {
+	console.log("mouse up");
+	btn_nav_in.style.boxShadow = "none";
+	var zoom = controls.target.distanceTo(controls.object.position);
+	var x = camera.position.x;
+	var y = camera.position.y;
+	var z = camera.position.z;
+	console.log(zoom, x, y, z);
+});
+btn_nav_out.addEventListener("mousedown", function () {
+	console.log("mouse down");
+	btn_nav_out.style.boxShadow = "0px 0px 2px 7px #007bff80";
+	camera.position.x /= 0.9;
+	camera.position.y /= 0.9;
+	camera.position.z /= 0.9;
+});
+btn_nav_out.addEventListener("mouseup", function () {
+	console.log("mouse up");
+	btn_nav_out.style.boxShadow = "none";
+	var zoom = controls.target.distanceTo(controls.object.position);
+	var x = camera.position.x;
+	var y = camera.position.y;
+	var z = camera.position.z;
+	console.log(zoom, x, y, z);
+});
