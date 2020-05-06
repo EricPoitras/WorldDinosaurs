@@ -79,6 +79,79 @@ function openModel(model_id) {
 			break;
 	}
 	console.log("Render the model from the following url address: " + url_address);
+	renderModel(url_address);
+}
+
+function animateModel() {
+	renderer.render(scene, camera);
+	requestAnimationFrame(animateModel);
+	// https://stackoverflow.com/questions/52944642/three-js-perspectivecamera-orbitcontrol-how-i-can-get-current-zoom-level
+	var zoom = controls.target.distanceTo(controls.object.position);
+	var x = camera.position.x;
+	var y = camera.position.y;
+	var z = camera.position.z;
+	//console.log(zoom, x, y, z);
+}
+
+function renderModel(model_url) {
+	// Define scene object and background color
+	scene = new THREE.Scene();
+	scene.background = new THREE.Color(0x000000);
+	// Define camera
+	camera = new THREE.PerspectiveCamera(40, sec_dashboard.offsetWidth / sec_dashboard.offsetHeight, 1, 5000);
+	camera.rotation.y = (45 / 180) * Math.PI;
+	camera.position.x = 800;
+	camera.position.y = 200;
+	camera.position.z = 1000;
+	// Define lighting conditions
+	highlight = new THREE.AmbientLight(0x404040, 100);
+	scene.add(highlight);
+	directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+	directionalLight.position.set(0, 1, 0);
+	//directionalLight.castShadow = true;
+	scene.add(directionalLight);
+	light = new THREE.PointLight(0xc4c4c4, 1.5);
+	light.position.set(0, 300, 500);
+	scene.add(light);
+	light2 = new THREE.PointLight(0xc4c4c4, 1.5);
+	light2.position.set(500, 100, 0);
+	scene.add(light2);
+	light3 = new THREE.PointLight(0xc4c4c4, 1.5);
+	light3.position.set(0, 100, -500);
+	scene.add(light3);
+	light4 = new THREE.PointLight(0xc4c4c4, 1.5);
+	light4.position.set(-500, 300, 500);
+	scene.add(light4);
+	light5 = new THREE.PointLight(0xc4c4c4, 1.5);
+	light5.position.set(0, -500, 0);
+	scene.add(light5);
+	// Define renderer
+	renderer = new THREE.WebGLRenderer({ antialias: true });
+	renderer.setSize(sec_dashboard.offsetWidth, sec_dashboard.offsetHeight);
+	console.log("Width set to:" + sec_dashboard.offsetWidth);
+	sec_dashboard.appendChild(renderer.domElement);
+	// Define controls
+	controls = new THREE.OrbitControls(camera, renderer.domElement);
+	controls.addEventListener("change", renderer);
+	// Define loader
+	let loader = new THREE.GLTFLoader();
+	loader.load(
+		model_url,
+		function (gltf) {
+			var fossil = gltf.scene;
+			fossil.scale.set(3, 3, 3);
+			scene.add(fossil);
+			animateModel();
+		},
+		// called while loading is progressing
+		function (xhr) {
+			console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+		},
+		// called when loading has errors
+		function (error) {
+			console.log("An error happened");
+		}
+	);
 }
 
 function loadComment(comment_id) {

@@ -1,10 +1,12 @@
 var data = [
 	{
 		id: "a00001",
-		title: "Utah Tea Pot",
-		descriptor: "For testing the web browser, the classic Utah Tea Pot.",
-		url: "../models/teapot/scene.gltf",
+		title: "Allosaurus Claw",
+		descriptor: "A claw from an Allosaurus.",
+		url: "../fossillab/models/allosaurus/claw.glb",
 	},
+	//For testing on local server, use ../fossillab/
+	//Likely to fail on GitHub, use actual domain or ../models
 ];
 
 console.log(data);
