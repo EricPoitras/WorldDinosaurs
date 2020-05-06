@@ -73,3 +73,7 @@ body {
 .btn_nav_out {
 	grid-area: zoomout;
 }
+canvas {
+	width: 100% !important;
+	height: 100% !important;
+}
