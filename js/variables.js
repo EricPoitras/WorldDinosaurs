@@ -27,11 +27,17 @@ var array_comment_rightbar = document.querySelectorAll(".cont_comment");
 var array_like_rightbar = document.querySelectorAll(".btn_like_rightbar");
 var array_more_rightbar = document.querySelectorAll(".btn_more_rightbar");
 var array_text_rightbar = document.querySelectorAll(".text_comment");
+var array_text_reply_rightbar = document.querySelectorAll(".text_reply");
+var array_btn_reply_rightbar = document.querySelectorAll(".btn_reply");
+var array_cont_reply_rightbar = document.querySelectorAll(".cont_reply");
+var array_input_reply_rightbar = document.querySelectorAll(".input_reply");
+var array_btn_add_rightbar = document.querySelectorAll(".btn_add");
+
 var btn_prev2 = document.getElementById("btn_prev2");
 var btn_next2 = document.getElementById("btn_next2");
 var counter = 0;
 var counter2 = 0;
-let scene, camera, renderer;
+let scene, camera, renderer, model;
 
 console.log(btn_assets);
 console.log(btn_annotation);

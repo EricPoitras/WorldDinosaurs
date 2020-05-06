@@ -1,3 +1,28 @@
+btn_add.addEventListener("click", function () {
+	var comment = input_comment.value;
+	try {
+		var zoom = controls.target.distanceTo(controls.object.position);
+		var x = camera.position.x;
+		var y = camera.position.y;
+		var z = camera.position.z;
+		console.log(comment + ";" + zoom + ";" + x + ";" + y + ";" + z + ";" + model + ";");
+		data2.push({
+			model: model,
+			like: 0,
+			comment: comment,
+			replies: [],
+			x: x,
+			y: y,
+			z: z,
+			distance: zoom,
+		});
+		console.log(data2);
+	} catch {
+		console.log("No model is loaded in the view");
+	}
+	loadComment(counter2);
+});
+
 btn_assets.addEventListener("click", function () {
 	sec_leftbar.classList.toggle("d-none");
 });
@@ -62,6 +87,16 @@ array_more_rightbar.forEach((item) => {
 array_like_rightbar.forEach((item) => {
 	item.addEventListener("click", (event) => {
 		likeComment(event.target.id);
+	});
+});
+array_btn_reply_rightbar.forEach((item) => {
+	item.addEventListener("click", (event) => {
+		toggleReply(event.target.id);
+	});
+});
+array_btn_add_rightbar.forEach((item) => {
+	item.addEventListener("click", (event) => {
+		addReply(event.target.id);
 	});
 });
 btn_nav_left.addEventListener("mousedown", function () {

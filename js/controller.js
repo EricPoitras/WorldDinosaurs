@@ -64,18 +64,23 @@ function openModel(model_id) {
 	switch (model_id) {
 		case "btn_open_left_1":
 			url_address = data[0].url;
+			model = data[0].id;
 			break;
 		case "btn_open_left_2":
 			url_address = data[1].url;
+			model = data[1].id;
 			break;
 		case "btn_open_left_3":
 			url_address = data[2].url;
+			model = data[2].id;
 			break;
 		case "btn_open_left_4":
 			url_address = data[3].url;
+			model = data[3].id;
 			break;
 		case "btn_open_left_5":
 			url_address = data[4].url;
+			model = data[4].id;
 			break;
 	}
 	console.log("Render the model from the following url address: " + url_address);
@@ -162,6 +167,8 @@ function loadComment(comment_id) {
 		try {
 			array_comment_rightbar[comment_index].classList.remove("d-none");
 			array_text_rightbar[comment_index].textContent = data2[i].comment;
+			array_text_reply_rightbar[comment_index].innerHTML = "";
+			data2[i].replies.forEach((element) => (array_text_reply_rightbar[comment_index].innerHTML += element + "<br>"));
 		} catch {
 			array_comment_rightbar[comment_index].classList.add("d-none");
 			btn_next2.disabled = true;
@@ -178,7 +185,8 @@ function toggleComment(comment_id) {
 			} else {
 				array_more_rightbar[0].textContent = "Less";
 			}
-			array_text_rightbar[0].classList.toggle("d-none");
+			array_text_reply_rightbar[0].classList.toggle("d-none");
+			array_btn_reply_rightbar[0].classList.toggle("d-none");
 			break;
 		case "btn_more_right_2":
 			if (array_more_rightbar[1].textContent == "Less") {
@@ -186,7 +194,8 @@ function toggleComment(comment_id) {
 			} else {
 				array_more_rightbar[1].textContent = "Less";
 			}
-			array_text_rightbar[1].classList.toggle("d-none");
+			array_text_reply_rightbar[1].classList.toggle("d-none");
+			array_btn_reply_rightbar[1].classList.toggle("d-none");
 			break;
 		case "btn_more_right_3":
 			if (array_more_rightbar[2].textContent == "Less") {
@@ -194,7 +203,8 @@ function toggleComment(comment_id) {
 			} else {
 				array_more_rightbar[2].textContent = "Less";
 			}
-			array_text_rightbar[2].classList.toggle("d-none");
+			array_text_reply_rightbar[2].classList.toggle("d-none");
+			array_btn_reply_rightbar[2].classList.toggle("d-none");
 			break;
 		case "btn_more_right_4":
 			if (array_more_rightbar[3].textContent == "Less") {
@@ -202,7 +212,8 @@ function toggleComment(comment_id) {
 			} else {
 				array_more_rightbar[3].textContent = "Less";
 			}
-			array_text_rightbar[3].classList.toggle("d-none");
+			array_text_reply_rightbar[3].classList.toggle("d-none");
+			array_btn_reply_rightbar[3].classList.toggle("d-none");
 			break;
 		case "btn_more_right_5":
 			if (array_more_rightbar[4].textContent == "Less") {
@@ -210,7 +221,8 @@ function toggleComment(comment_id) {
 			} else {
 				array_more_rightbar[4].textContent = "Less";
 			}
-			array_text_rightbar[4].classList.toggle("d-none");
+			array_text_reply_rightbar[4].classList.toggle("d-none");
+			array_btn_reply_rightbar[4].classList.toggle("d-none");
 			break;
 	}
 }
@@ -236,4 +248,77 @@ function likeComment(comment_id) {
 	}
 	data2[like_index].like = data2[like_index].like + 1;
 	console.log(data2);
+}
+
+function toggleReply(reply_id) {
+	switch (reply_id) {
+		case "btn_reply1":
+			if (array_btn_reply_rightbar[0].textContent == "Add a Reply") {
+				array_btn_reply_rightbar[0].textContent = "Hide";
+			} else {
+				array_btn_reply_rightbar[0].textContent = "Add a Reply";
+			}
+			array_cont_reply_rightbar[0].classList.toggle("d-none");
+			break;
+		case "btn_reply2":
+			if (array_btn_reply_rightbar[1].textContent == "Add a Reply") {
+				array_btn_reply_rightbar[1].textContent = "Hide";
+			} else {
+				array_btn_reply_rightbar[1].textContent = "Add a Reply";
+			}
+			array_cont_reply_rightbar[1].classList.toggle("d-none");
+			break;
+		case "btn_reply3":
+			if (array_btn_reply_rightbar[2].textContent == "Add a Reply") {
+				array_btn_reply_rightbar[2].textContent = "Hide";
+			} else {
+				array_btn_reply_rightbar[2].textContent = "Add a Reply";
+			}
+			array_cont_reply_rightbar[2].classList.toggle("d-none");
+			break;
+		case "btn_reply4":
+			if (array_btn_reply_rightbar[3].textContent == "Add a Reply") {
+				array_btn_reply_rightbar[3].textContent = "Hide";
+			} else {
+				array_btn_reply_rightbar[3].textContent = "Add a Reply";
+			}
+			array_cont_reply_rightbar[3].classList.toggle("d-none");
+			break;
+		case "btn_reply5":
+			if (array_btn_reply_rightbar[4].textContent == "Add a Reply") {
+				array_btn_reply_rightbar[4].textContent = "Hide";
+			} else {
+				array_btn_reply_rightbar[4].textContent = "Add a Reply";
+			}
+			array_cont_reply_rightbar[4].classList.toggle("d-none");
+			break;
+	}
+}
+
+function addReply(reply_id) {
+	var reply_index;
+	switch (reply_id) {
+		case "btn_add1":
+			reply_index = counter2 * 5;
+			data2[reply_index].replies.push(array_input_reply_rightbar[0].value);
+			break;
+		case "btn_add2":
+			reply_index = counter2 * 5 + 1;
+			data2[reply_index].replies.push(array_input_reply_rightbar[1].value);
+			break;
+		case "btn_add3":
+			reply_index = counter2 * 5 + 2;
+			data2[reply_index].replies.push(array_input_reply_rightbar[2].value);
+			break;
+		case "btn_add4":
+			reply_index = counter2 * 5 + 3;
+			data2[reply_index].replies.push(array_input_reply_rightbar[3].value);
+			break;
+		case "btn_add5":
+			reply_index = counter2 * 5 + 4;
+			data2[reply_index].replies.push(array_input_reply_rightbar[4].value);
+			break;
+	}
+	console.log(data2);
+	loadComment(counter2);
 }
