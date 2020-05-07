@@ -18,9 +18,27 @@ btn_add.addEventListener("click", function () {
 	var scale_x = controls.object.scale.x;
 	var scale_y = controls.object.scale.y;
 	var scale_z = controls.object.scale.z;
+	var gender;
+	if (input_gender1.checked == true) {
+		gender = input_gender1.value;
+	} else if (input_gender2.checked == true) {
+		gender = input_gender2.value;
+	} else if (input_gender3.checked == true) {
+		gender = input_gender3.value;
+	} else {
+		gender = input_gender4.value;
+	}
 	try {
 		//console.log(comment + ";" + zoom + ";" + x + ";" + y + ";" + z + ";" + model + ";");
 		data2.push({
+			user: {
+				username: input_username.value,
+				age: input_age.value,
+				degree: input_degree.value,
+				university: input_degree.value,
+				gpa: input_gpa.value,
+				gender: gender,
+			},
 			model: { id: model, name: name },
 			like: 0,
 			comment: comment,
@@ -61,6 +79,11 @@ array_more_leftbar.forEach((item) => {
 array_open_leftbar.forEach((item) => {
 	item.addEventListener("click", (event) => {
 		openModel(event.target.id);
+	});
+});
+array_btn_view_rightbar.forEach((item) => {
+	item.addEventListener("click", (event) => {
+		viewModel(event.target.id);
 	});
 });
 document.addEventListener("DOMContentLoaded", function () {
@@ -121,7 +144,11 @@ array_btn_add_rightbar.forEach((item) => {
 btn_nav_left.addEventListener("mousedown", function () {
 	//console.log("mouse down");
 	btn_nav_left.style.boxShadow = "0px 0px 2px 7px #007bff80";
-	camera.position.x /= 0.9;
+	camera.position.x = -19;
+	camera.position.y = 32;
+	camera.position.z = 1295;
+	camera.lookAt(new THREE.Vector3(0, 0, 0));
+	console.log(camera);
 });
 btn_nav_left.addEventListener("mouseup", function () {
 	//console.log("mouse up");
@@ -130,12 +157,17 @@ btn_nav_left.addEventListener("mouseup", function () {
 	var x = camera.position.x;
 	var y = camera.position.y;
 	var z = camera.position.z;
+
 	//console.log(zoom, x, y, z);
 });
 btn_nav_up.addEventListener("mousedown", function () {
 	//console.log("mouse down");
 	btn_nav_up.style.boxShadow = "0px 0px 2px 7px #007bff80";
-	camera.position.y *= 0.9;
+	camera.position.x = 377;
+	camera.position.y = 1239;
+	camera.position.z = 0.64;
+	camera.lookAt(new THREE.Vector3(0, 0, 0));
+	console.log(camera);
 });
 btn_nav_up.addEventListener("mouseup", function () {
 	//console.log("mouse up");
@@ -149,7 +181,11 @@ btn_nav_up.addEventListener("mouseup", function () {
 btn_nav_right.addEventListener("mousedown", function () {
 	//console.log("mouse down");
 	btn_nav_right.style.boxShadow = "0px 0px 2px 7px #007bff80";
-	camera.position.x *= 0.9;
+	camera.position.x = 122;
+	camera.position.y = 137;
+	camera.position.z = -1282;
+	camera.lookAt(new THREE.Vector3(0, 0, 0));
+	console.log(camera);
 });
 btn_nav_right.addEventListener("mouseup", function () {
 	//console.log("mouse up");
@@ -163,7 +199,11 @@ btn_nav_right.addEventListener("mouseup", function () {
 btn_nav_down.addEventListener("mousedown", function () {
 	//console.log("mouse down");
 	btn_nav_down.style.boxShadow = "0px 0px 2px 7px #007bff80";
-	camera.position.y /= 0.9;
+	camera.position.x = 0;
+	camera.position.y = -1296;
+	camera.position.z = 0;
+	camera.lookAt(new THREE.Vector3(0, 0, 0));
+	console.log(camera);
 });
 btn_nav_down.addEventListener("mouseup", function () {
 	//console.log("mouse up");
@@ -205,4 +245,10 @@ btn_nav_out.addEventListener("mouseup", function () {
 	var y = camera.position.y;
 	var z = camera.position.z;
 	//console.log(zoom, x, y, z);
+});
+btn_export.addEventListener("click", function () {
+	exportData();
+});
+btn_start.addEventListener("click", function () {
+	showInterfaceView("dashboard");
 });

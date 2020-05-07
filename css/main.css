@@ -80,3 +80,13 @@ canvas {
 #text_agent {
 	max-width: 300px;
 }
+#cont_navbar {
+	height: 70px;
+}
+#cont_login {
+	height: calc(100vh - 70px);
+	background-image: url("../assets/animals.svg"), url("../assets/pattern.svg");
+	background-repeat: no-repeat;
+	background-size: 700px 700px, cover;
+	background-position: 200px 170px, center;
+}

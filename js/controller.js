@@ -95,7 +95,8 @@ function animateModel() {
 	var x = camera.position.x;
 	var y = camera.position.y;
 	var z = camera.position.z;
-	//console.log(zoom, x, y, z);
+
+	//console.log(x, z, y);
 	//console.log(controls.object.rotation._x, controls.object.rotation._y, controls.object.rotation._z);
 }
 
@@ -344,4 +345,60 @@ function setTime() {
 	if (parseInt(totalSeconds / 60) > 5 || observation_count >= counter3) {
 		updateAgent(counter3);
 	}
+}
+
+function showInterfaceView(view) {
+	switch (view) {
+		case "landing":
+			cont_navbar.classList.remove("d-none");
+			cont_login.classList.remove("d-none");
+			cont_toolbar.classList.add("d-none");
+			cont_dashboard.classList.add("d-none");
+			break;
+		case "dashboard":
+			cont_navbar.classList.add("d-none");
+			cont_login.classList.add("d-none");
+			cont_toolbar.classList.remove("d-none");
+			cont_dashboard.classList.remove("d-none");
+			break;
+		default:
+			cont_navbar.classList.remove("d-none");
+			cont_login.classList.remove("d-none");
+			cont_toolbar.classList.add("d-none");
+			cont_dashboard.classList.add("d-none");
+			break;
+	}
+}
+
+function exportData() {
+	var JSONdata = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data2));
+	btn_export.setAttribute("href", "data:" + JSONdata);
+	btn_export.setAttribute("download", "MITutorLog" + Date.now() + ".json");
+}
+
+function viewModel(model_id) {
+	// TODO: Add code to render the model using euler angles, position, and scale
+	var index;
+	switch (model_id) {
+		case "btn_view_right_1":
+			index = counter2 * 5;
+			break;
+		case "btn_view_right_2":
+			index = counter2 * 5 + 1;
+			break;
+		case "btn_view_right_3":
+			index = counter2 * 5 + 2;
+			break;
+		case "btn_view_right_4":
+			index = counter2 * 5 + 3;
+			break;
+		case "btn_view_right_5":
+			index = counter2 * 5 + 4;
+			break;
+	}
+	camera.position.x = data2[index].position.x;
+	camera.position.y = data2[index].position.y;
+	camera.position.z = data2[index].position.z;
+	camera.setRotationFromQuaternion(data2[index].quaternion);
+	console.log(camera.position.x, camera.position.y, camera.position.z);
 }

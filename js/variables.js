@@ -1,3 +1,21 @@
+var cont_navbar = document.getElementById("cont_navbar");
+var cont_login = document.getElementById("cont_login");
+var cont_toolbar = document.getElementById("cont_toolbar");
+var cont_dashboard = document.getElementById("cont_dashboard");
+// Inputs
+var input_username = document.getElementById("input_username");
+var input_gender1 = document.getElementById("input_gender1");
+var input_gender2 = document.getElementById("input_gender2");
+var input_gender3 = document.getElementById("input_gender3");
+var input_gender4 = document.getElementById("input_gender4");
+var input_age = document.getElementById("input_age");
+var input_degree = document.getElementById("input_degree");
+var input_university = document.getElementById("input_university");
+var input_gpa = document.getElementById("input_gpa");
+// Buttons
+var btn_export = document.getElementById("btn_export");
+var btn_start = document.getElementById("btn_start");
+
 var btn_assets = document.getElementById("btn_assets");
 var btn_annotation = document.getElementById("btn_annotation");
 var btn_controls = document.getElementById("btn_controls");
@@ -32,6 +50,7 @@ var array_btn_reply_rightbar = document.querySelectorAll(".btn_reply");
 var array_cont_reply_rightbar = document.querySelectorAll(".cont_reply");
 var array_input_reply_rightbar = document.querySelectorAll(".input_reply");
 var array_btn_add_rightbar = document.querySelectorAll(".btn_add");
+var array_btn_view_rightbar = document.querySelectorAll(".btn_view_rightbar");
 
 var btn_prev2 = document.getElementById("btn_prev2");
 var btn_next2 = document.getElementById("btn_next2");
@@ -43,29 +62,3 @@ var observation_count = 0;
 var timer;
 var fossil;
 let scene, camera, renderer, model;
-
-console.log(btn_assets);
-console.log(btn_annotation);
-console.log(btn_controls);
-console.log(btn_agent);
-console.log(sec_leftbar);
-console.log(sec_dashboard);
-console.log(sec_rightbar);
-console.log(array_more_leftbar);
-console.log(array_open_leftbar);
-console.log(btn_nav_left);
-console.log(btn_nav_up);
-console.log(btn_nav_right);
-console.log(btn_nav_down);
-console.log(btn_nav_in);
-console.log(btn_nav_out);
-console.log(text_agent);
-console.log(input_comment);
-console.log(btn_add);
-console.log(array_comment_rightbar);
-console.log(array_like_rightbar);
-console.log(array_more_rightbar);
-console.log(array_text_rightbar);
-console.log(btn_prev2);
-console.log(btn_next2);
-console.log(counter);
