@@ -37,6 +37,11 @@ var btn_prev2 = document.getElementById("btn_prev2");
 var btn_next2 = document.getElementById("btn_next2");
 var counter = 0;
 var counter2 = 0;
+var counter3 = 0;
+var totalSeconds = 0;
+var observation_count = 0;
+var timer;
+var fossil;
 let scene, camera, renderer, model;
 
 console.log(btn_assets);

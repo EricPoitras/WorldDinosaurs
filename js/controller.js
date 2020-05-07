@@ -96,6 +96,7 @@ function animateModel() {
 	var y = camera.position.y;
 	var z = camera.position.z;
 	//console.log(zoom, x, y, z);
+	//console.log(controls.object.rotation._x, controls.object.rotation._y, controls.object.rotation._z);
 }
 
 function renderModel(model_url) {
@@ -143,7 +144,8 @@ function renderModel(model_url) {
 	loader.load(
 		model_url,
 		function (gltf) {
-			var fossil = gltf.scene;
+			fossil = gltf.scene;
+			console.log(fossil);
 			fossil.scale.set(3, 3, 3);
 			scene.add(fossil);
 			animateModel();
@@ -321,4 +323,25 @@ function addReply(reply_id) {
 	}
 	console.log(data2);
 	loadComment(counter2);
+}
+
+function updateAgent(prompt_id) {
+	clearInterval(timer);
+	if (counter3 >= agent.length) {
+		text_agent.classList.add("d-none");
+	} else {
+		text_agent.classList.remove("d-none");
+		text_agent.textContent = agent[prompt_id].prompt;
+		counter3 = counter3 + 1;
+		totalSeconds = 0;
+		timer = setInterval(setTime, 1000);
+	}
+}
+
+function setTime() {
+	++totalSeconds;
+	//console.log("Seconds: " + (totalSeconds % 60), "Minutes: " + parseInt(totalSeconds / 60));
+	if (parseInt(totalSeconds / 60) > 5 || observation_count >= counter3) {
+		updateAgent(counter3);
+	}
 }

@@ -5,22 +5,32 @@ var data = [
 		descriptor: "A claw from an Allosaurus.",
 		url: "../fossillab/models/allosaurus/claw.glb",
 	},
-	//For testing on local server, use ../fossillab/
-	//Likely to fail on GitHub, use actual domain or ../models
 ];
 
 console.log(data);
 
-var data2 = [
+var data2 = [];
+
+var agent = [
 	{
-		model: "a00001",
-		like: 0,
-		comment:
-			"Life finds a way. God help us, we're in the hands of engineers. I was part of something special. Hey, you know how I'm, like, always trying to save the planet? Here's my chance. Eventually, you do plan to have dinosaurs on your dinosaur tour, right? I was part of something special.",
-		replies: ["Lorem Ipsum 1", "Lorem Ipsum 2"],
-		x: 131,
-		y: 231,
-		z: 948,
-		distance: 120,
+		label: "prompt_1",
+		prompt: "Look at this bone from all angles and talk about the details you see.",
+	},
+	{
+		label: "prompt_2",
+		prompt: "What part of the animal is the bone from?",
+	},
+	{
+		label: "prompt_3",
+		prompt: "Was the animal that it came from was a carnivore or herbivore?",
+	},
+	{
+		label: "prompt_4",
+		prompt: "Can you move and interact with the bone model in ways that help you see how it might have functioned in real-life?",
+	},
+	{
+		label: "prompt_5",
+		prompt:
+			"This model is in fact an Allosaurus Claw, which is a carnivore, can you now move and interact with the bone model again to demonstrate how it might have functioned in real life?",
 	},
 ];
