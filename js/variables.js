@@ -38,6 +38,11 @@ var btn_nav_right = document.querySelector(".btn_nav_right");
 var btn_nav_down = document.querySelector(".btn_nav_down");
 var btn_nav_in = document.querySelector(".btn_nav_in");
 var btn_nav_out = document.querySelector(".btn_nav_out");
+var btn_comment = document.getElementById("btn_comment");
+var btn_comment_obs = document.getElementById("btn_comment_obs");
+var btn_comment_ide = document.getElementById("btn_comment_ide");
+var text_comment_help = document.getElementById("text_comment_help");
+
 var text_agent = document.getElementById("text_agent");
 var input_comment = document.getElementById("input_comment");
 var btn_add = document.getElementById("btn_add");

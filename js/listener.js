@@ -252,3 +252,13 @@ btn_export.addEventListener("click", function () {
 btn_start.addEventListener("click", function () {
 	showInterfaceView("dashboard");
 });
+btn_comment_obs.addEventListener("click", function () {
+	text_comment_help.textContent = "Make observations by gathering information about the fossil.";
+	btn_comment.textContent = "Observe";
+	input_comment.placeholder = "Make an observation";
+});
+btn_comment_ide.addEventListener("click", function () {
+	text_comment_help.textContent = "Use what you already know and have observed to infer a detail about the fossil.";
+	btn_comment.textContent = "Identify";
+	input_comment.placeholder = "Make an identification";
+});

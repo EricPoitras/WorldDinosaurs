@@ -205,10 +205,18 @@
 				</div>
 				<div id="sec_rightbar" class="col-3 p-0 sec_sidebar">
 					<div class="input-group p-3">
+						<div class="input-group-prepend">
+							<button id="btn_comment" class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Observe</button>
+							<div class="dropdown-menu">
+								<a id="btn_comment_obs" class="dropdown-item" href="#">Observe</a>
+								<a id="btn_comment_ide" class="dropdown-item" href="#">Identify</a>
+							</div>
+						</div>
 						<input class="form-control" id="input_comment" type="text" placeholder="Make an observation" />
 						<div class="input-group-append">
 							<button class="btn btn-outline-secondary" type="button" id="btn_add">Add</button>
 						</div>
+						<small id="text_comment_help" class="form-text text-muted">Make observations by gathering information about the fossil.</small>
 					</div>
 					<ul class="list-group list-group-flush">
 						<li class="list-group-item text-justify cont_comment">
