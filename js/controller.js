@@ -172,6 +172,14 @@ function loadComment(comment_id) {
 			array_text_rightbar[comment_index].textContent = data2[i].comment;
 			array_text_reply_rightbar[comment_index].innerHTML = "";
 			data2[i].replies.forEach((element) => (array_text_reply_rightbar[comment_index].innerHTML += element + "<br>"));
+			array_text_label_rightbar[comment_index].textContent = data2[i].label.comment;
+			array_text_label_likes[comment_index].textContent = data2[i].like;
+			array_text_label_replies[comment_index].textContent = data2[i].replies.length;
+			if (data2[i].label.comment == "Identify") {
+				array_icon_label_rightbar[comment_index].innerHTML = "<i class='fas fa-info ml-2'></i>";
+			} else {
+				array_icon_label_rightbar[comment_index].innerHTML = "<i class='fas fa-search'></i>";
+			}
 		} catch {
 			array_comment_rightbar[comment_index].classList.add("d-none");
 			btn_next2.disabled = true;
@@ -251,8 +259,8 @@ function likeComment(comment_id) {
 	}
 	data2[like_index].like = data2[like_index].like + 1;
 	console.log(data2);
+	loadComment(counter2);
 }
-
 function toggleReply(reply_id) {
 	switch (reply_id) {
 		case "btn_reply1":

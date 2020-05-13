@@ -1,5 +1,6 @@
 btn_add.addEventListener("click", function () {
 	var comment = input_comment.value;
+	var comment_label = btn_comment.textContent;
 	var zoom = controls.target.distanceTo(controls.object.position);
 	var cam_x = camera.position.x;
 	var cam_y = camera.position.y;
@@ -49,7 +50,7 @@ btn_add.addEventListener("click", function () {
 			quaternion: { x: quaternion_x, y: quaternion_y, z: quaternion_z, w: quaternion_w },
 			position: { x: position_x, y: position_y, z: position_z },
 			scale: { x: scale_x, y: scale_y, z: scale_z },
-			label: { prompt: agent[counter3 - 1].label },
+			label: { prompt: agent[counter3 - 1].label, comment: comment_label },
 		});
 		console.log(data2);
 		observation_count = observation_count + 1;
