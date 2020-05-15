@@ -1,7 +1,7 @@
 var data = [
 	{
 		id: "a00001",
-		title: "Mystery Fossil #1",
+		title: "Mystery Fossil 1",
 		descriptor: "A fossil that belongs to an unknown dinosaur species.",
 		url: "../fossillab/models/allosaurus/claw.glb",
 	},

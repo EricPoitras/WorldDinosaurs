@@ -1,4 +1,5 @@
 btn_add.addEventListener("click", function () {
+	var date_obj = new Date();
 	var comment = input_comment.value;
 	var comment_label = btn_comment.textContent;
 	var zoom = controls.target.distanceTo(controls.object.position);
@@ -29,34 +30,39 @@ btn_add.addEventListener("click", function () {
 	} else {
 		gender = input_gender4.value;
 	}
-	try {
-		//console.log(comment + ";" + zoom + ";" + x + ";" + y + ";" + z + ";" + model + ";");
-		data2.push({
-			user: {
-				username: input_username.value,
-				age: input_age.value,
-				degree: input_degree.value,
-				university: input_degree.value,
-				gpa: input_gpa.value,
-				gender: gender,
-			},
-			model: { id: model, name: name },
-			like: 0,
-			comment: comment,
-			count: observation_count,
-			replies: [],
-			camera: { x: cam_x, y: cam_y, z: cam_z, distance: zoom },
-			euler: { order: "XYZ", x: euler_x, y: euler_y, z: euler_z },
-			quaternion: { x: quaternion_x, y: quaternion_y, z: quaternion_z, w: quaternion_w },
-			position: { x: position_x, y: position_y, z: position_z },
-			scale: { x: scale_x, y: scale_y, z: scale_z },
-			label: { prompt: agent[counter3 - 1].label, comment: comment_label },
-		});
-		console.log(data2);
-		observation_count = observation_count + 1;
-	} catch {
-		console.log("No model is loaded in the view");
-	}
+	//try {
+	data2.push({
+		metadata: {
+			version: "FossilLabv1.0_testversion",
+			date: date_obj.toISOString(),
+			timestamp: Date.now(),
+		},
+		user: {
+			username: input_username.value,
+			age: input_age.value,
+			degree: input_degree.value,
+			university: input_university.value,
+			gpa: input_gpa.value,
+			gender: gender,
+		},
+		model: { id: "a00001", name: "fossil_1" },
+		like: 0,
+		comment: comment,
+		count: observation_count,
+		replies: [],
+		camera: { x: cam_x, y: cam_y, z: cam_z, distance: zoom },
+		euler: { order: "XYZ", x: euler_x, y: euler_y, z: euler_z },
+		quaternion: { x: quaternion_x, y: quaternion_y, z: quaternion_z, w: quaternion_w },
+		position: { x: position_x, y: position_y, z: position_z },
+		scale: { x: scale_x, y: scale_y, z: scale_z },
+		label: { prompt: agent[counter3 - 1].label, comment: comment_label },
+	});
+	console.log(data2);
+	observation_count = observation_count + 1;
+	logComment(data2.length - 1);
+	//} catch {
+	//console.log("No model is loaded in the view");
+	//}
 	loadComment(counter2);
 });
 
