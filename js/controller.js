@@ -136,6 +136,9 @@ function renderModel(model_url) {
 	renderer = new THREE.WebGLRenderer({ antialias: true });
 	renderer.setSize(sec_dashboard.offsetWidth, sec_dashboard.offsetHeight);
 	console.log("Width set to:" + sec_dashboard.offsetWidth);
+	try {
+		sec_dashboard.getElementsByTagName("CANVAS")[0].remove();
+	} catch {}
 	sec_dashboard.appendChild(renderer.domElement);
 	// Define controls
 	controls = new THREE.OrbitControls(camera, renderer.domElement);

@@ -86,6 +86,7 @@ array_more_leftbar.forEach((item) => {
 array_open_leftbar.forEach((item) => {
 	item.addEventListener("click", (event) => {
 		openModel(event.target.id);
+		updateAgent(counter3);
 	});
 });
 array_btn_view_rightbar.forEach((item) => {
@@ -96,7 +97,6 @@ array_btn_view_rightbar.forEach((item) => {
 document.addEventListener("DOMContentLoaded", function () {
 	loadModel(counter);
 	loadComment(counter2);
-	updateAgent(counter3);
 });
 btn_next.addEventListener("click", function () {
 	counter = counter + 1;
