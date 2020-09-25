@@ -88,7 +88,11 @@ btn_add.addEventListener("click", function () {
 	});
 	console.log(data2);
 	observation_count = observation_count + 1;
+
 	logComment(data2.length - 1);
+
+
+
 	//	} catch {
 	//console.log("No model is loaded in the view");
 	//}
